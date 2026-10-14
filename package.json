@@ -1,0 +1,31 @@
+{
+  "name": "block-generator",
+  "displayName": "Block Generator",
+  "description": "Генератор базовых блоков кода if, for, while",
+  "version": "1.0.0",
+  "publisher": "kotsem",
+  "engines": {
+    "vscode": "^1.80.0"
+  },
+  "main": "./extension.js",
+  "activationEvents": [
+    "onCommand:blockGenerator.insertBlock"
+  ],
+  "contributes": {
+    "commands": [
+      {
+        "command": "blockGenerator.insertBlock",
+        "title": "Block Generator: Вставить блок"
+      }
+    ],
+    "menus": {
+      "editor/context": [
+        {
+          "command": "blockGenerator.insertBlock",
+          "group": "1_modification",
+          "when": "editorTextFocus"
+        }
+      ]
+    }
+  }
+}
